@@ -183,6 +183,20 @@ footer{
     background:#fff;
     text-decoration:none
 }
+.lead-social{
+    margin-top:12px;
+}
+.lead-social a{
+    color:#fff;
+    margin-right:12px;
+    font-size:1.25em;
+    text-decoration:none;
+    display:inline-block;
+}
+.lead-social a:hover{
+    color:#d6eaf8;
+    text-decoration:none;
+}
 .shadow{
     box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24)
 }
@@ -301,7 +315,8 @@ footer{
 }
 #about p{
     color:#74808a;
-    margin:0
+    margin:0;
+    text-indent:2em;
 }
 #experience{
     padding:50px 15px;
@@ -480,6 +495,15 @@ footer{
     color:#74808a;
     margin:0 0 15px 0;
     font-size:0.9em
+}
+.project-info a{
+    display:block;
+    margin-bottom:8px;
+    color:#3498db;
+    text-decoration:none;
+}
+.project-info a:hover{
+    text-decoration:underline;
 }
 .no-image .project-info{
     position:relative;
