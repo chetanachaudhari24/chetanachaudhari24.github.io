@@ -3,7 +3,9 @@
  This file gets compiled using Gulp and send to the /css folder which is then loaded on the page. */
 body{
     font-family:'Lato', sans-serif;
-    font-size:16px
+    font-size:16px;
+    background:#f7f8fa; /* light grey page background */
+    color:#374054; /* default body text color */
 }
 body.active{
     overflow:hidden;
@@ -70,7 +72,7 @@ header li{
 }
 header a{
     display:block;
-    color:#3498db;
+    color:#374054; /* dark grey menu links */
     padding:10px
 }
 header a:hover{
@@ -80,7 +82,7 @@ header a:hover{
     border-radius:4px
 }
 header a:focus{
-    color:#3498db;
+    color:#374054;
     text-decoration:none
 }
 header.active{
@@ -172,29 +174,35 @@ footer{
 }
 .btn-rounded-white{
     display:inline-block;
-    color:#fff;
+    color:#374054; /* dark grey text */
     padding:15px 25px;
-    border:3px solid #fff;
+    border:3px solid #374054; /* dark grey ring */
     border-radius:30px;
-    transition:.5s ease all
+    background:transparent;
+    transition:.25s ease all;
 }
 .btn-rounded-white:hover{
-    color:#3498db;
+    color:#374054; /* remain dark grey on hover */
     background:#fff;
-    text-decoration:none
+    text-decoration:none;
+    border-color:#374054;
+}
+.btn-rounded-white:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(55,64,84,0.12); /* accessible focus ring */
 }
 .lead-social{
     margin-top:12px;
 }
 .lead-social a{
-    color:#fff;
+    color:#374054; /* dark icons for light backgrounds */
     margin-right:12px;
     font-size:1.25em;
     text-decoration:none;
     display:inline-block;
 }
 .lead-social a:hover{
-    color:#d6eaf8;
+    color:#217dbb; /* subtle blue on hover */
     text-decoration:none;
 }
 .shadow{
@@ -240,13 +248,76 @@ footer{
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    text-align:center
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:left;
+    gap:20px;
+    padding:0 15px;
 }
 #lead-content h1,#lead-content h2{
     margin:0
 }
+.lead-photo{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    border:4px solid rgba(255,255,255,0.45);
+    box-shadow:0 4px 10px rgba(0,0,0,0.28);
+    flex:0 0 auto;
+}
+.lead-photo-img{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,0.45);
+    box-shadow:0 4px 10px rgba(0,0,0,0.28);
+    object-fit:cover;
+    display:block;
+}
+.lead-text{
+    text-align:left;
+}
+.lead-photo-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    flex:0 0 auto;
+}
+.lead-social-photo{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+}
+.lead-social-photo a{
+    color:#374054; /* dark grey icons under photo */
+    font-size:1.25em;
+}
+@media (max-width:768px){
+    #lead-content{
+        flex-direction:column;
+        text-align:center;
+    }
+    .lead-photo{
+        width:160px;
+        height:160px;
+        margin-bottom:0;
+    }
+    .lead-photo-img{
+        width:160px;
+        height:160px;
+    }
+    .lead-text{
+        text-align:center;
+    }
+    #lead-content h1{
+        font-size:3.2em;
+    }
+}
 #lead-content h1{
-    color:#fff;
+    color:#374054; /* dark headline on light background */
     font-weight:900;
     font-size:5em;
     text-transform:uppercase;
@@ -254,7 +325,7 @@ footer{
     line-height:0.9em
 }
 #lead-content h2{
-    color:#a0cfee;
+    color:#74808a; /* muted subheading */
     font-weight:500;
     font-size:2.25em;
     margin-bottom:15px
@@ -267,8 +338,9 @@ footer{
     right:0;
     bottom:0;
     left:0;
-    background:rgba(33,125,187,0.8);
-    z-index:1
+    background:rgba(255,255,255,0.8); /* lighten hero */
+    z-index:1;
+    mix-blend-mode: normal;
 }
 #lead-down{
     position:absolute;
@@ -278,7 +350,7 @@ footer{
     text-align:center;
     z-index:10;
     bottom:15px;
-    color:#fff
+    color:#374054; /* dark grey arrow */
 }
 #lead-down span{
     cursor:pointer;
@@ -287,13 +359,18 @@ footer{
     width:35px;
     height:35px;
     border-radius:50%;
-    border:3px solid #a0cfee;
-    text-align:center
+    border:3px solid #374054; /* dark grey ring */
+    text-align:center;
+    transition:.15s ease all;
+}
+#lead-down span:hover{
+    background:rgba(55,64,84,0.06);
 }
 #lead-down i{
     animation:pulsate 1.5s ease;
     animation-iteration-count:infinite;
-    padding-top:5px
+    padding-top:5px;
+    color:inherit; /* inherit dark grey */
 }
 @keyframes pulsate{
     0%{
@@ -344,7 +421,7 @@ footer{
     right:auto;
     height:100%;
     width:3px;
-    background:#3498db;
+    background:#374054; /* dark grey timeline line */
     z-index:0
 }
 #experience-timeline:after{
@@ -352,8 +429,8 @@ footer{
     content:'';
     width:3px;
     height:40px;
-    background:#3498db;
-    background:linear-gradient(to bottom, #3498db, rgba(52,152,219,0));
+    background:#374054;
+    background:linear-gradient(to bottom, #374054, rgba(55,64,84,0));
     top:100%;
     left:303px
 }
@@ -394,7 +471,7 @@ footer{
     color:#fff;
     width:50px;
     height:50px;
-    background:#3498db;
+    background:#374054; /* dark grey icon */
     border-radius:50%;
     float:left;
     z-index:99;
@@ -499,10 +576,11 @@ footer{
 .project-info a{
     display:block;
     margin-bottom:8px;
-    color:#3498db;
+    color:#374054; /* dark grey links in Research */
     text-decoration:none;
 }
 .project-info a:hover{
+    color:#217dbb; /* blue on hover for emphasis */
     text-decoration:underline;
 }
 .no-image .project-info{
@@ -540,46 +618,53 @@ footer{
 }
 #contact{
     padding:50px 15px;
-    background:#3498db;
+    background:transparent; /* page background already light */
     text-align:center
 }
 #contact h2{
     margin:0 0 15px 0;
-    color:#fff;
+    color:#374054; /* dark section heading */
     font-weight:500
 }
 #contact-form{
     max-width:500px;
-    margin:0 auto
+    margin:0 auto;
+    background:#f2f2f5; /* light grey form background */
+    padding:24px;
+    border-radius:8px;
+    border:1px solid #e6e6e6;
+    box-shadow:0 1px 3px rgba(0,0,0,0.04);
 }
 #contact-form input,#contact-form textarea{
     display:block;
     width:100%;
     padding:10px;
     border-radius:4px;
-    border:none;
+    border:1px solid #e6e6e6;
     margin-bottom:10px;
-    background:#1d6fa5;
-    color:#fff;
-    transition:.5s ease all
+    background:#fff;
+    color:#374054;
+    transition:.25s ease all
 }
 #contact-form input::-webkit-input-placeholder,#contact-form textarea::-webkit-input-placeholder{
-    color:#fff
+    color:#7e8890
 }
 #contact-form input:-moz-placeholder,#contact-form textarea:-moz-placeholder{
-    color:#fff;
+    color:#7e8890;
     opacity:1
 }
 #contact-form input::-moz-placeholder,#contact-form textarea::-moz-placeholder{
-    color:#fff;
+    color:#7e8890;
     opacity:1
 }
 #contact-form input:-ms-input-placeholder,#contact-form textarea:-ms-input-placeholder{
-    color:#fff
+    color:#7e8890
 }
 #contact-form input:focus,#contact-form textarea:focus{
     outline:none;
-    background:#16527a
+    border-color:#374054;
+    box-shadow:0 0 0 4px rgba(55,64,84,0.06);
+    background:#fff;
 }
 #contact-form textarea{
     height:150px;
@@ -588,17 +673,18 @@ footer{
 #contact-form button{
     display:block;
     width:100%;
-    background:#fff;
+    background:#374054;
     border-radius:4px;
-    padding:5px 10px;
+    padding:8px 12px;
     border:none;
-    color:#3498db;
+    color:#fff;
     font-weight:700;
-    box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
-    transition:.5s ease all
+    box-shadow:0 1px 3px rgba(0,0,0,0.08);
+    transition:.25s ease all
 }
 #contact-form button:hover{
-    box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23)
+    background:#2e3640;
+    box-shadow:0 6px 12px rgba(0,0,0,0.12)
 }
 .optional-section{
     padding:50px 15px;
