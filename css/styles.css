@@ -268,14 +268,15 @@ footer{
     flex:0 0 auto;
 }
 .lead-photo-img{
-    width:200px;
-    height:200px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     border:4px solid rgba(255,255,255,0.45);
     box-shadow:0 4px 10px rgba(0,0,0,0.28);
     object-fit:cover;
     display:block;
 }
+
 .lead-text{
     text-align:left;
 }
@@ -286,6 +287,7 @@ footer{
     gap:12px;
     flex:0 0 auto;
 }
+
 .lead-social-photo{
     display:flex;
     gap:12px;
